@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import LoginPage from './Components/Recipes/Login';
-import '../dist/output.css'; // Importa el CSS generado en tu archivo App.jsx o donde sea necesario
+import RegisterForm from './Components/Recipes/RegisterForm';
+import '../dist/output.css'; 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -11,6 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/singup" element={<RegisterForm />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

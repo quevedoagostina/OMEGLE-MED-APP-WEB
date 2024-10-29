@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { ZodError, z } from 'zod'; 
+import { ZodError, z } from 'zod';
 import LoginForm from '../../Components/Recipes/Login';
 
 const loginSchemaUsername = z.object({
@@ -9,13 +9,13 @@ const loginSchemaUsername = z.object({
     password: z.string().min(1, { message: "Password is required" }),
 });
 
-export default function LoginPage() { 
-    const [errors, setErrors] = useState({ username: '', password: '' });
+export default function LoginPage() {
+    const [errors, setErrors] = useState({ username: '', password: '' }); 
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const username = e.target.username.value;
-        const password = e.target.password.value;
+        const username = e.currentTarget.username.value;
+        const password = e.currentTarget.password.value;
 
         try {
             loginSchemaUsername.parse({ username, password });
@@ -42,7 +42,7 @@ export default function LoginPage() {
         <div className="flex h-screen items-center justify-center bg-gray-100">
             <div className="w-full max-w-md bg-white p-8 shadow-md rounded-lg">
                 <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">Login</h1>
-                <LoginForm onSubmit={onSubmit} errors={errors} />
+                <LoginForm onSubmit={onSubmit} errors={errors} onLoginSuccess={() => console.log("Login Success!")} />
             </div>
         </div>    
     );

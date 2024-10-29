@@ -1,3 +1,4 @@
+
 import './input.css';
 import '../dist/output.css';
 
@@ -6,7 +7,7 @@ function App() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
       <header className="text-center mb-8">
         <img src="/vite.svg" className="h-16 mb-4" alt="Omegle logo" />
-        <h1 className="text-3xl font-bold text-red-800">Bienvenido a Omegle</h1>
+        <h1 className="text-3xl font-bold text-gray-800">Bienvenido a Omegle</h1>
         <p className="text-gray-600 mt-2">Tu solución para gestionar turnos médicos de manera rápida y sencilla.</p>
       </header>
 
@@ -19,6 +20,12 @@ function App() {
               className="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow hover:bg-indigo-700 transition"
             >
               Iniciar sesión
+            </a>
+            <a
+              href="/singup"
+              className="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow hover:bg-indigo-700 transition"
+            >
+              Registrar usuario
             </a>
           </div>
         </section>
