@@ -1,0 +1,8 @@
+
+/* Estilos globales personalizados */
+body {
+    font-family: 'Inter', sans-serif; /* Ejemplo de fuente global */
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

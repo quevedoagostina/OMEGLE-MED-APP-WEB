@@ -1,24 +1,26 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import ListRecipes from './Components/Recipes/ListRecipes'
-import 'primereact/resources/themes/saga-blue/theme.css';
-import 'primereact/resources/primereact.min.css';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import Inicio from './pages/inicio';
+import Turnos from './pages/turnos';
+import Citas from './pages/citas';
+import Doctores from './pages/doctores';
+import Pacientes from './pages/pacientes';
+
 
 function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <ListRecipes />
-    </>
-  )
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/turnos" element={<Turnos />} />
+        <Route path="/citas" element={<Citas />} />
+        <Route path="/doctores" element={<Doctores />} />
+        <Route path="/pacientes" element={<Pacientes />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
